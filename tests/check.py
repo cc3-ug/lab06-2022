@@ -30,7 +30,7 @@ def check_ex1():
     output = task.stdout.decode().strip()
     expected = read('tests/expected/ex1')
     if output == expected:
-        return (100 / 3, 'passed', '')
+        return (40, 'passed', '')
     else:
         return (0, 'failed', '')
 
@@ -54,7 +54,7 @@ def check_ex2():
     output = task.stdout.decode().strip()
     expected = read('tests/expected/ex2')
     if output == expected:
-        return (100 / 3, 'passed', '')
+        return (40, 'passed', '')
     else:
         return (0, 'failed', '')
 
@@ -67,7 +67,7 @@ def check_ex3():
     output = task.stdout.decode().strip()
     expected = read('tests/expected/ex3')
     if output == expected:
-        return (100 / 3, 'passed', '')
+        return (40, 'passed', '')
     else:
         return (0, 'failed', '')
 
@@ -89,7 +89,7 @@ def lab6_logisim():
     grade += ex1_result[0]
     grade += ex2_result[0]
     grade += ex3_result[0]
-    grade = min(round(grade), 100)
+    grade = min(round(grade), 120)
     report = create_report(table)
     if errors != '':
         report += '\n\nMore Info:\n\n' + errors
