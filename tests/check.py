@@ -1,7 +1,7 @@
+import utils
 from subprocess import run
 from subprocess import PIPE
 from xml.dom import minidom
-from tabulate import tabulate
 
 
 # executes a shell command
@@ -30,29 +30,29 @@ def check_ex1():
     output = task.stdout.decode().strip()
     expected = read('tests/expected/ex1')
     if output == expected:
-        return (40, 'passed', '')
+        return (20, 'passed', '')
     else:
         return (0, 'failed', '')
 
 
 # checks rotr.circ
 def check_ex2():
-    task = execute(cmd=['java', '-jar', 'tests/logisim.jar', '-tty', 'table', 'tests/ex2.circ'])
+    task = execute(cmd=['java', '-jar', 'tests/logisim.jar', '-tty', 'table', 'tests/comparator_test.circ'])
     if task.returncode != 0:
         return (0, 'runtime error', task.stderr.decode().strip())
 
     # check used components
-    tree = minidom.parse('rotr.circ')
-    invalid_components = ['shifter']
+    tree = minidom.parse('myComparator.circ')
+    invalid_components = ['Comparator']
     for circuit in tree.getElementsByTagName('circuit'):
         for component in circuit.getElementsByTagName('comp'):
             name = component.getAttribute('name').lower()
             lib = component.getAttribute('lib')
             if name in invalid_components and lib != '':
-                return (0, 'do not use logisim shifters', '')
+                return (0, 'do not use logisim comparators', '')
 
     output = task.stdout.decode().strip()
-    expected = read('tests/expected/ex2')
+    expected = read('tests/expected/comparator_expected')
     if output == expected:
         return (40, 'passed', '')
     else:
@@ -79,7 +79,7 @@ def lab6_logisim():
     ex3_result = check_ex3()
     table = []
     table.append(('1. Splitters', *ex1_result[0: 2]))
-    table.append(('2. Rotate Right', *ex2_result[0: 2]))
+    table.append(('2. Comparator', *ex2_result[0: 2]))
     table.append(('3. ALU', *ex3_result[0: 2]))
     errors = ex1_result[2]
     errors += '\n' + ex2_result[2]
@@ -89,12 +89,13 @@ def lab6_logisim():
     grade += ex1_result[0]
     grade += ex2_result[0]
     grade += ex3_result[0]
-    grade = min(round(grade), 120)
-    report = create_report(table)
+    grade = min(round(grade), 100)
+
+    report = utils.report(table)
+    print(report)
     if errors != '':
         report += '\n\nMore Info:\n\n' + errors
-    print(report)
-    print('\n=> Score: %d/100' % grade)
+    return utils.write_result(grade, report)
 
 
 if __name__ == '__main__':

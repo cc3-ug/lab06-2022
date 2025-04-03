@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project source="2.7.1" version="1.0">
-This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
-<lib desc="#Wiring" name="0">
+  This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+
+  <lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="facing" val="west"/>
       <a name="incoming" val="32"/>
@@ -76,7 +77,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <main name="rotr"/>
+  <main name="myComparator"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -109,25 +110,24 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="rotr">
-    <a name="circuit" val="rotr"/>
+  <circuit name="myComparator">
+    <a name="circuit" val="myComparator"/>
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <appear>
       <rect fill="none" height="40" stroke="#000000" stroke-width="2" width="60" x="50" y="50"/>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="80" y="74">Ex2</text>
-      <circ-port height="8" pin="230,360" width="8" x="46" y="66"/>
-      <circ-port height="10" pin="1050,360" width="10" x="105" y="65"/>
-      <circ-port height="8" pin="640,660" width="8" x="76" y="86"/>
+      <circ-port height="8" pin="200,330" width="8" x="46" y="56"/>
+      <circ-port height="8" pin="200,390" width="8" x="46" y="66"/>
+      <circ-port height="10" pin="1080,330" width="10" x="105" y="55"/>
+      <circ-port height="10" pin="1080,390" width="10" x="105" y="65"/>
       <circ-anchor facing="east" height="6" width="6" x="107" y="67"/>
     </appear>
     <wire from="(960,150)" to="(960,580)"/>
     <wire from="(320,580)" to="(960,580)"/>
     <wire from="(320,150)" to="(960,150)"/>
-    <wire from="(710,600)" to="(710,710)"/>
     <wire from="(670,20)" to="(850,20)"/>
-    <wire from="(570,600)" to="(570,710)"/>
     <wire from="(1150,280)" to="(1150,430)"/>
     <wire from="(320,150)" to="(320,580)"/>
     <wire from="(410,70)" to="(850,70)"/>
@@ -140,53 +140,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(980,280)" to="(980,430)"/>
     <wire from="(980,430)" to="(1150,430)"/>
     <wire from="(980,280)" to="(1150,280)"/>
-    <wire from="(570,600)" to="(710,600)"/>
-    <wire from="(570,710)" to="(710,710)"/>
     <wire from="(850,20)" to="(850,70)"/>
-    <comp lib="6" loc="(639,745)" name="Text">
-      <a name="text" val="OVER THIS BOX"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="6" loc="(212,466)" name="Text">
-      <a name="text" val="OVER THIS BOX"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="6" loc="(643,138)" name="Text">
-      <a name="text" val="Rotate Right"/>
-      <a name="font" val="SansSerif bold 18"/>
-    </comp>
-    <comp lib="0" loc="(640,660)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="6" loc="(626,27)" name="Text">
-      <a name="text" val="Note"/>
-      <a name="font" val="SansSerif bold 16"/>
-    </comp>
-    <comp lib="6" loc="(596,704)" name="Text">
-      <a name="text" val="Shamt"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="6" loc="(629,52)" name="Text">
-      <a name="text" val="Please, do not modify/change/replace the input and output pins"/>
-      <a name="font" val="SansSerif bolditalic 12"/>
-    </comp>
-    <comp lib="6" loc="(214,450)" name="Text">
+    <comp lib="6" loc="(885,600)" name="Text">
       <a name="text" val="DO NOT CROSS WIRES"/>
       <a name="font" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="6" loc="(156,298)" name="Text">
-      <a name="text" val="Input"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(230,360)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="A"/>
-    </comp>
-    <comp lib="6" loc="(883,616)" name="Text">
+    <comp lib="6" loc="(1061,464)" name="Text">
       <a name="text" val="OVER THIS BOX"/>
       <a name="font" val="SansSerif bold 12"/>
     </comp>
@@ -194,28 +153,59 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="DO NOT CROSS WIRES"/>
       <a name="font" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="6" loc="(885,600)" name="Text">
-      <a name="text" val="DO NOT CROSS WIRES"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="6" loc="(641,729)" name="Text">
-      <a name="text" val="DO NOT CROSS WIRES"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1050,360)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="label" val="C"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="6" loc="(1061,464)" name="Text">
+    <comp lib="6" loc="(883,616)" name="Text">
       <a name="text" val="OVER THIS BOX"/>
       <a name="font" val="SansSerif bold 12"/>
     </comp>
     <comp lib="6" loc="(1014,300)" name="Text">
       <a name="text" val="Output"/>
       <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1080,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Eq"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(156,298)" name="Text">
+      <a name="text" val="Input"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(200,390)" name="Pin">
+      <a name="width" val="2"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(643,137)" name="Text">
+      <a name="text" val="Comparator: Eq and LT"/>
+      <a name="font" val="SansSerif bold 18"/>
+    </comp>
+    <comp lib="6" loc="(212,466)" name="Text">
+      <a name="text" val="OVER THIS BOX"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="6" loc="(214,450)" name="Text">
+      <a name="text" val="DO NOT CROSS WIRES"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="6" loc="(629,52)" name="Text">
+      <a name="text" val="Please, do not modify/change/replace the input and output pins"/>
+      <a name="font" val="SansSerif bolditalic 12"/>
+    </comp>
+    <comp lib="6" loc="(626,27)" name="Text">
+      <a name="text" val="Note"/>
+      <a name="font" val="SansSerif bold 16"/>
+    </comp>
+    <comp lib="0" loc="(200,330)" name="Pin">
+      <a name="width" val="2"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(1080,390)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="LT"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>
