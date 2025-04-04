@@ -43,7 +43,7 @@ def check_ex2():
 
     # check used components
     tree = minidom.parse('myComparator.circ')
-    invalid_components = ['Comparator']
+    invalid_components = ['comparator']
     for circuit in tree.getElementsByTagName('circuit'):
         for component in circuit.getElementsByTagName('comp'):
             name = component.getAttribute('name').lower()
@@ -52,7 +52,8 @@ def check_ex2():
                 return (0, 'do not use logisim comparators', '')
 
     output = task.stdout.decode().strip()
-    expected = read('tests/expected/comparator_expected')
+    expected = read('tests/expected/comparator_expected').strip()
+
     if output == expected:
         return (40, 'passed', '')
     else:
